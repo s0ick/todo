@@ -58,7 +58,9 @@ const bruteButton = function(){
 
   todoRemove.forEach(function(item){
     item.addEventListener('click', function(event){
-      event.target.closest('li').remove();
+      let current = event.target.closest('li');
+      localStorage.removeItem(current.textContent);
+      current.remove();
     });
   });
 };
